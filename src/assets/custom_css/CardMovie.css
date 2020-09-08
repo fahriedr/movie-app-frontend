@@ -1,0 +1,17 @@
+.title-date {
+  width: fit-content;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.tanggal {
+  padding-left: 10px;
+}
+
+.divider {
+  border-right: 1px solid white;
+  height: 100%;
+  padding-left: 8px;
+}
