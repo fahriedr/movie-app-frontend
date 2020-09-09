@@ -1,5 +1,9 @@
-.title-date {
-  width: fit-content;
+.info {
+  width: 13rem;
+}
+
+.title-date > span {
+  text-align: center;
 }
 
 .title {
@@ -7,11 +11,23 @@
 }
 
 .tanggal {
-  padding-left: 10px;
+  padding-left: 6px;
+  font-size: 13px;
 }
 
 .divider {
   border-right: 1px solid white;
   height: 100%;
   padding-left: 8px;
+}
+
+.rating {
+  color: yellow;
+  margin-right: 4px;
+}
+
+.persen {
+  color: white;
+  font-size: 13px;
+  padding-right: 6px;
 }
