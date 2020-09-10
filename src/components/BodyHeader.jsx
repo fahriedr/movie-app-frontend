@@ -1,10 +1,10 @@
 import React from "react";
 
-function BodyHeader() {
+function BodyHeader({ title }) {
   return (
     <div className="mt-4">
       <p className="text-primary">
-        <strong>New Release</strong>
+        <strong>{title}</strong>
       </p>
       <hr />
     </div>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import CardMovie from "./CardMovie";
+import BodyHeader from "./BodyHeader";
 import axios from "axios";
 
-function BodyMain() {
+function NowPlayingMovies() {
+  const title = "Now Playing";
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,6 +18,7 @@ function BodyMain() {
 
   return (
     <div>
+      <BodyHeader title={title} />
       <div className="row">
         {movies.map((movie) => (
           <div className="col">
@@ -27,4 +30,4 @@ function BodyMain() {
   );
 }
 
-export default BodyMain;
+export default NowPlayingMovies;

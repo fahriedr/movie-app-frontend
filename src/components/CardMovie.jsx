@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "@fortawesome/fontawesome-svg-core";
 import "../assets/custom_css/CardMovie.css";
-import axios from "axios";
-import Genre from "./Genre";
+import { Link } from "react-router-dom";
 
 var month_name = function (dt) {
   let newDt = new Date(dt);
@@ -29,14 +28,6 @@ function CardMovie({ movie }) {
 
   let fullDate = date.getDate() + " " + month + ", " + date.getFullYear();
 
-  let genre = [];
-  // for (let i = 0; i < movie.genre_ids.length; i++) {
-  //   if (movie.genre_ids[i] === genres[i].id) {
-  //     genre.push(genres[i].name);
-  //   }
-  // }
-  // console.log(genres[0]);
-
   return (
     <div className="mb-4">
       <div className="card" style={{ width: 13 + "rem" }}>
@@ -48,19 +39,15 @@ function CardMovie({ movie }) {
       </div>
       <div className="info">
         <span className="mt-2 title">
-          <strong>{movie.title}</strong>
+          <Link onClick={() => (window.location = "/movie/" + movie.id)}>
+            <strong>{movie.title}</strong>
+          </Link>
         </span>
         <div>
           <i className="fas fa-star rating fa-xs"></i>
           <span className="persen">{movie.vote_average}</span>
           <span>|</span>
           <span className="tanggal">{fullDate}</span>
-          <p className="genre"></p>
-          {/* {genre.map(
-            (genre, movie.genre_ids)(
-              <Genre key={movie.genre_ids} genre={genre} />
-            )
-          )} */}
         </div>
       </div>
     </div>

@@ -1,0 +1,14 @@
+.detail-movie {
+  height: 100vh;
+}
+
+.rating {
+  color: yellow;
+  margin-right: 4px;
+}
+
+.persen {
+  color: white;
+  font-size: 15px;
+  padding-right: 6px;
+}

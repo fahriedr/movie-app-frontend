@@ -1,5 +1,5 @@
 import React from "react";
-// import "./assets/bootstrap/js/bootstrap.min.js";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./assets/bootstrap/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -8,8 +8,10 @@ import Body from "./components/Body";
 function App() {
   return (
     <div className="bg-dark">
-      <Navbar />
-      <Body />
+      <Router>
+        <Navbar />
+        <Body />
+      </Router>
     </div>
   );
 }
