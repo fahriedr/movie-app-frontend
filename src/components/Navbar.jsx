@@ -20,8 +20,8 @@ export class Navbar extends Component {
 
   handlerSubmit = () => {
     window.event.preventDefault();
-    const page = 2;
-    window.location = "/search/" + this.state.query + "&page=" + page;
+    // const page = 2;
+    window.location = "/search/" + this.state.query + "&page=" + 1;
   };
 
   render() {
@@ -47,9 +47,9 @@ export class Navbar extends Component {
               <li className="nav-item active">
                 <Link
                   className="nav-link"
-                  onClick={() => (window.location = "/home")}
+                  onClick={() => (window.location = "/now-playing&page=" + 1)}
                 >
-                  Home <span className="sr-only">(current)</span>
+                  Now Playing <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li className="nav-item">

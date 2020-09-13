@@ -48,7 +48,7 @@ export class SearchMovie extends Component {
             </div>
           ))}
         </div>
-        <Pagination />
+        <Pagination props={this.props} />
       </div>
     );
   }

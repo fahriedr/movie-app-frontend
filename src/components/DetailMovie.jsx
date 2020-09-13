@@ -1,6 +1,7 @@
 import "../assets/custom_css/DetailMovie.css";
 import axios from "axios";
 import React, { Component } from "react";
+import NotFoundPage from "./NotFoundPage";
 
 export class DetailMovie extends Component {
   constructor(props) {
@@ -19,6 +20,8 @@ export class DetailMovie extends Component {
       movie: response.data,
       loading: false,
     });
+
+    console.log(this.state.movie.status_code);
   };
 
   month_name = function (dt) {
@@ -53,7 +56,9 @@ export class DetailMovie extends Component {
       genreName = genres.map((item) => item.name),
     } = this.state.movie;
 
-    console.log(genreName);
+    if (this.state.movie.status_code === 34) {
+      return <NotFoundPage />;
+    }
 
     if (this.state.loading === true) {
       return (
@@ -69,7 +74,7 @@ export class DetailMovie extends Component {
               <img
                 src={`https://image.tmdb.org/t/p/w400/${this.state.movie.poster_path}`}
                 className="img-fluid"
-                alt="Responsive image"
+                alt=""
               />
             </div>
             <div className="col-7 ml-4 pt-2">

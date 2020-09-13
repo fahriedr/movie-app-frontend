@@ -3,6 +3,7 @@ import axios from "axios";
 import CardMovie from "./CardMovie";
 import BodyHeader from "./BodyHeader";
 import Pagination from "./Pagination";
+import Spinner from "./Spinner";
 
 export class TopRated extends Component {
   constructor(props) {
@@ -26,11 +27,7 @@ export class TopRated extends Component {
   render() {
     const title = "Top Rated";
     if (this.state.loading === true) {
-      return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
-        </div>
-      );
+      return <Spinner />;
     }
     return (
       <div>

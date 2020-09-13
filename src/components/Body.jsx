@@ -11,9 +11,7 @@ function Body() {
   return (
     <div className="container container-body text-light">
       <Switch>
-        <Route path="/home">
-          <NowPlayingMovies />
-        </Route>
+        <Route path={`/now-playing&page=:page`} component={NowPlayingMovies} />
         <Route path={`/popular&page=:page`} component={PopularMovies} />
         <Route path={`/top-rated&page=:page`} component={TopRated} />
         <Route path={`/search/:query&page=:page`} component={SearchMovie} />

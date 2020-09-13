@@ -2,6 +2,7 @@ import axios from "axios";
 import CardMovie from "./CardMovie";
 import BodyHeader from "./BodyHeader";
 import Pagination from "./Pagination";
+import Spinner from "./Spinner";
 
 import React, { Component } from "react";
 
@@ -26,6 +27,9 @@ export class PopularMovies extends Component {
 
   render() {
     const title = "Popular Movies";
+    if (this.state.loading === true) {
+      return <Spinner />;
+    }
     return (
       <div>
         <BodyHeader title={title} />
